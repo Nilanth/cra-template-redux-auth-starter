@@ -1,6 +1,26 @@
 ## Creat React App Redux Auth Starter Template
 
-### Redux auth starter is preconfigured Create React App (CRA) template, You can start building your app once the template is installed. Zero configs needed.
+### Redux auth starter is preconfigured [Create React App (CRA)](https://github.com/facebook/create-react-app) template, You can start building your app once the template is installed. Zero configs needed.
+
+### Usage
+
+```
+yarn create react-app your-project-name --template redux-auth-starter
+```
+### Or
+
+```
+npx create-react-app your-project-name --template redux-auth-starter
+```
+
+npx command installs most recent stable version of CRA from npm. --template parameter points to this template, note that cra-template- prefix is omitted.
+
+Next
+
+```
+cd {PROJECT NAME}
+yarn start
+```
 
 ### This CRA template includes
  - React
@@ -20,18 +40,7 @@
 - UI components are styled with [Ant Design](https://ant.design/).
 - To access different API verbs, axiosClient helper is included.
 - Basic Folder structure.
-
-### Usage
-
-```
-yarn create react-app your-project-name --template redux-auth-starter
-```
-### Or
-
-```
-npx create-react-app your-project-name --template redux-auth-starter
-```
-
+- **Absolute Imports**
 
 More feature coming on the way...
 

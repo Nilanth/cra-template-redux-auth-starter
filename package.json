@@ -25,7 +25,7 @@
     "node": ">=10"
   },
   "bugs": {
-    "url": "https://github.com/facebook/create-react-app/issues"
+    "url": "https://github.com/Nilanth/cra-template-redux-auth-started/issues"
   },
   "files": [
     "template",

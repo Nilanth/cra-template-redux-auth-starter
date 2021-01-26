@@ -1,6 +1,6 @@
-## **CRA Redux Starter Template**
+## Creat React App Redux Auth Starter Template
 
-#### **cra-template-redux-auth-starter** is preconfigured Create React App (CRA) template, You can start building your app once the template is installed. Zero configs needed.
+### Redux auth starter is preconfigured Create React App (CRA) template, You can start building your app once the template is installed. Zero configs needed.
 
 ### This CRA template includes
  - React

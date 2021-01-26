@@ -1,7 +1,3 @@
-<p align='center'>
-<img alt="Logo" src="https://create-react-app.dev/img/logo.svg" width="20%" />
- </p>
-
 ## Creat React App Redux Auth Starter Template
 
 Redux auth starter is preconfigured [Create React App (CRA)](https://github.com/facebook/create-react-app) template, You can start building your app with Zero configuration.

@@ -17,7 +17,7 @@
 - Mock authentication is configured with [reqres](https://reqres.in/) API.
 - Public and Private routes are configured
 - Redirect to the private route after successful login, Prevent access to public pages after login and Prevent access to the private pages before login.
-- UI components are styled by [Ant Design](https://ant.design/).
+- UI components are styled with [Ant Design](https://ant.design/).
 - To access different API verbs, axiosClient helper is included.
 - Basic Folder structure.
 
@@ -32,5 +32,6 @@ yarn create react-app your-project-name --template redux-auth-starter
 npx create-react-app your-project-name --template redux-auth-starter
 ```
 
-More feature coming on the way
+
+More feature coming on the way...
 

@@ -15,7 +15,7 @@
     "authentication",
     "routes"
   ],
-  "description": "CRA template with React, Redux,  React Router, AntD, Axios, Saga, SASS, Authentication, Routes. No configuration required, Start building your App.",
+  "description": "Create React App template with React, Redux,  React Router, AntD, Axios, Saga, SASS, Authentication, Routes. No configuration required, Start building your App.",
   "repository": {
     "type": "git",
     "url": "https://github.com/Nilanth/cra-template-redux-auth-starter",

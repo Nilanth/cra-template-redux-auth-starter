@@ -1,5 +1,5 @@
 const constants = {
-    HOST_URL: 'https://reqres.in/api/',
+    HOST_URL: process.env.REACT_APP_HOST_URL,
     headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json',

@@ -1,19 +1,19 @@
 import {useDispatch} from 'react-redux'
-import actions from "redux/Authenticate/actions";
+import actions from 'redux/Authenticate/actions';
 import {useSelector} from 'react-redux'
 import {Form, Input, Button, Checkbox} from 'antd';
 import {UserOutlined, LockOutlined} from '@ant-design/icons';
 
 
 function LoginPage() {
-    const { loader } = useSelector(state => state.authenticateReducer)
+    const {loader} = useSelector(state => state.authenticateReducer)
 
     const dispatch = useDispatch();
 
     let onFinish = () => {
         dispatch({
             type: actions.LOGIN,
-            payload: {"email": "eve.holt@reqres.in", "password": "cityslicka"}
+            payload: {'email': 'eve.holt@reqres.in', 'password': 'cityslicka'},
         });
     };
 
@@ -36,8 +36,11 @@ function LoginPage() {
                         },
                     ]}
                 >
-                    <Input size="large" prefix={<UserOutlined className="site-form-item-icon"/>}
-                           placeholder="Username"/>
+                    <Input size="large"
+                           prefix={<UserOutlined className="site-form-item-icon"/>}
+                           placeholder="Username"
+                           autoComplete="username"
+                    />
                 </Form.Item>
                 <Form.Item
                     name="password"
@@ -53,6 +56,7 @@ function LoginPage() {
                         type="password"
                         placeholder="Password"
                         size="large"
+                        autoComplete="current-password"
                     />
                 </Form.Item>
                 <Form.Item>
@@ -62,7 +66,8 @@ function LoginPage() {
                 </Form.Item>
 
                 <Form.Item>
-                    <Button loading={loader} type="primary" htmlType="submit" className="login-form-button" size="large">
+                    <Button loading={loader} type="primary" htmlType="submit" className="login-form-button"
+                            size="large">
                         Log in
                     </Button>
                 </Form.Item>

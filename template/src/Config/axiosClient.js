@@ -1,5 +1,5 @@
-import axios from "axios";
-import constants from "Config/constants";
+import axios from 'axios';
+import constants from 'Config/constants';
 
 const axiosClient = axios.create();
 
@@ -7,6 +7,7 @@ axiosClient.defaults.baseURL = constants.HOST_URL;
 
 axiosClient.defaults.headers = constants.headers;
 
+// To share cookies to cross site domain, change to true.
 axiosClient.defaults.withCredentials = false;
 
 export function getRequest(URL) {

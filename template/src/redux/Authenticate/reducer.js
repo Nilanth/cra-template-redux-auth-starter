@@ -2,7 +2,7 @@ import actions from 'redux/Authenticate/actions';
 
 const initialState = {
     isAuthenticated: false,
-    loader: false
+    loader: false,
 }
 
 function Reducer(state = initialState, action) {

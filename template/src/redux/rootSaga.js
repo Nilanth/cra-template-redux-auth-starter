@@ -1,9 +1,9 @@
 import { all } from 'redux-saga/effects';
 import authenticateSaga from 'redux/Authenticate/saga';
 
-export default function* rootSaga(getState){
-    console.log('asdasd',getState);
+// Here you can include all the saga which you write for components
+export default function* rootSaga(){
     yield all([
-        authenticateSaga()
+        authenticateSaga(),
     ]);
 }

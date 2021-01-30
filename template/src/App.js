@@ -3,24 +3,23 @@ import {
     Switch,
     Route,
     Redirect,
-} from "react-router-dom";
-import './App.scss';
-import LoginPage from "components/LoginPage";
-import Dashboard from "components/Dashboard";
-import Users from "components/Users";
+} from 'react-router-dom';
 import { useSelector } from 'react-redux'
+import './App.scss';
+import LoginPage from 'components/LoginPage';
+import Dashboard from 'components/Dashboard';
+import Users from 'components/Users';
+
 
 
 function App() {
-    const {isAuthenticated} = useSelector(state => state.authenticateReducer)
+    //Getting isAuthenticated store value from Authentication reducer.
+    const { isAuthenticated } = useSelector(state => state.authenticateReducer)
     return (
         <Router>
             <Switch>
                 <PublicRoute path="/login" isAuthenticated={isAuthenticated}>
                     <LoginPage/>
-                </PublicRoute>
-                <PublicRoute path="/public" isAuthenticated={isAuthenticated}>
-                    <PublicPage/>
                 </PublicRoute>
                 <PrivateRoute path="/" isAuthenticated={isAuthenticated}>
                     <ProtectedRoutes/>
@@ -30,51 +29,50 @@ function App() {
     );
 }
 
+// Private route restrict to access public pages after login.
 function PrivateRoute({children, isAuthenticated, ...rest}) {
     return (
         <Route
             {...rest}
             render={({location}) =>
-                isAuthenticated ? (
+                (isAuthenticated ? (
                     children
                 ) : (
                     <Redirect
                         to={{
-                            pathname: "/login",
-                            state: {from: location}
+                            pathname: '/login',
+                            state: {from: location},
                         }}
                     />
-                )
+                ))
             }
         />
     );
 }
 
+// Public route restrict to access authenticated pages before login.
 function PublicRoute({children, isAuthenticated, ...rest}) {
     return (
         <Route
             {...rest}
             render={
                 ({location}) =>
-                    !isAuthenticated ? (
+                    (!isAuthenticated ? (
                         children
                     ) : (
                         <Redirect
                             to={{
                                 pathname: '/dashboard',
-                                state: {from: location}
+                                state: {from: location},
                             }}
                         />
-                    )
+                    ))
             }
         />
     );
 }
 
-function PublicPage() {
-    return <h3>Public</h3>;
-}
-
+// Here we include the components which need to be accesses after successful login.
 function ProtectedRoutes() {
     return (
         <Switch>

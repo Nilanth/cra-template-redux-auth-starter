@@ -6,74 +6,73 @@ import {UserOutlined, LockOutlined} from '@ant-design/icons';
 
 
 function LoginPage() {
-    const {loader} = useSelector(state => state.authenticateReducer)
+  const {loader} = useSelector(state => state.authenticateReducer)
 
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-    let onFinish = () => {
-        dispatch({
-            type: actions.LOGIN,
-            payload: {'email': 'eve.holt@reqres.in', 'password': 'cityslicka'},
-        });
-    };
+  let onFinish = () => {
+    dispatch({
+      type: actions.LOGIN,
+      payload: {'email': 'eve.holt@reqres.in', 'password': 'cityslicka'},
+    });
+  };
 
-    return (
-        <div className="container">
-            <Form
-                name="normal_login"
-                className="form"
-                initialValues={{
-                    remember: true,
-                }}
-                onFinish={onFinish}
-            >
-                <Form.Item
-                    name="username"
-                    rules={[
-                        {
-                            required: true,
-                            message: 'Please input your Username!',
-                        },
-                    ]}
-                >
-                    <Input size="large"
-                           prefix={<UserOutlined className="site-form-item-icon"/>}
-                           placeholder="Username"
-                           autoComplete="username"
-                    />
-                </Form.Item>
-                <Form.Item
-                    name="password"
-                    rules={[
-                        {
-                            required: true,
-                            message: 'Please input your Password!',
-                        },
-                    ]}
-                >
-                    <Input
-                        prefix={<LockOutlined className="site-form-item-icon"/>}
-                        type="password"
-                        placeholder="Password"
-                        size="large"
-                        autoComplete="current-password"
-                    />
-                </Form.Item>
-                <Form.Item>
-                    <Form.Item name="remember" valuePropName="checked" noStyle>
-                        <Checkbox>Remember me</Checkbox>
-                    </Form.Item>
-                </Form.Item>
+  return (
+    <div className="container">
+      <Form
+        name="normal_login"
+        className="form"
+        initialValues={{
+          remember: true,
+        }}
+        onFinish={onFinish}
+      >
+        <Form.Item
+          name="username"
+          rules={[
+            {
+              required: true,
+              message: 'Please input your Username!',
+            },
+          ]}
+        >
+          <Input size="large"
+            prefix={<UserOutlined className="site-form-item-icon"/>}
+            placeholder="Username"
+            autoComplete="username"
+          />
+        </Form.Item>
+        <Form.Item
+          name="password"
+          rules={[
+            {
+              required: true,
+              message: 'Please input your Password!',
+            },
+          ]}
+        >
+          <Input
+            prefix={<LockOutlined className="site-form-item-icon"/>}
+            type="password"
+            placeholder="Password"
+            size="large"
+            autoComplete="current-password"
+          />
+        </Form.Item>
+        <Form.Item>
+          <Form.Item name="remember" valuePropName="checked" noStyle>
+            <Checkbox>Remember me</Checkbox>
+          </Form.Item>
+        </Form.Item>
 
-                <Form.Item>
-                    <Button loading={loader} type="primary" htmlType="submit" className="login-form-button"
-                            size="large">
-                        Log in
-                    </Button>
-                </Form.Item>
-            </Form>
-        </div>
-    );
+        <Form.Item>
+          <Button loading={loader} type="primary" htmlType="submit" className="login-form-button"
+            size="large">Log in
+          </Button>
+        </Form.Item>
+      </Form>
+    </div>
+  );
 }
 
 export default LoginPage;

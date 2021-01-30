@@ -5,16 +5,16 @@ import rootSaga from './rootSaga';
 
 export default function configureAppStore(preloadedState) {
 
-    const sagaMiddleware = createSagaMiddleware();
-    const store = configureStore({
-        reducer: rootReducer,
-        middleware: [...getDefaultMiddleware(), sagaMiddleware],
-        preloadedState,
-    })
-    sagaMiddleware.run(rootSaga)
+  const sagaMiddleware = createSagaMiddleware();
+  const store = configureStore({
+    reducer: rootReducer,
+    middleware: [...getDefaultMiddleware(), sagaMiddleware],
+    preloadedState,
+  })
+  sagaMiddleware.run(rootSaga)
 
-    if (process.env.NODE_ENV !== 'production' && module.hot) {
-        module.hot.accept('redux/rootReducers', () => store.replaceReducer(rootReducer))
-    }
-    return store
+  if (process.env.NODE_ENV !== 'production' && module.hot) {
+    module.hot.accept('redux/rootReducers', () => store.replaceReducer(rootReducer))
+  }
+  return store
 }

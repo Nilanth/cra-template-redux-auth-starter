@@ -122,3 +122,19 @@ REACT_APP_HOST_URL = https://reqres.in/api/
 
 6. Edit the Lint rules in **.eslintrc.json** file.
 
+## Contributing
+
+Please see [CONTRIBUTING](.github/CONTRIBUTING.md) for details.
+
+## Security Vulnerabilities
+
+Please review [our security policy](../../security/policy) on how to report security vulnerabilities.
+
+## Credits
+
+-   [Nilanth](https://github.com/nilanth)
+-   [All Contributors](../../contributors)
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.

@@ -1,5 +1,7 @@
 ## Creat React App Redux Auth Starter Template
 
+[![Node version](https://img.shields.io/node/v/cra-template-redux-auth-starter.svg?style=flat)](http://nodejs.org/download/)
+
 Redux auth starter is a preconfigured [Create React App (CRA)](https://github.com/facebook/create-react-app) template. You can start building your app with Zero configuration.
 
 ### Usage

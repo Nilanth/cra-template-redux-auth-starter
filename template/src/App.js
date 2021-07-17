@@ -6,8 +6,8 @@ import {
   Redirect,
 } from 'react-router-dom';
 import { useSelector } from 'react-redux'
-import 'App.scss';
-import ProtectedRoutes from 'app/routes/ProtectedRoutes';
+import './App.scss';
+import ProtectedRoutes from 'routes/ProtectedRoutes';
 
 const LoginPage = lazy(() => import('features/OnBoarding/LoginPage'));
 

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import constants from 'Config/constants';
+import constants from 'common/utils/constants';
 
 const axiosClient = axios.create();
 

@@ -1,3 +1,4 @@
+import {lazy, Suspense} from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -6,25 +7,28 @@ import {
 } from 'react-router-dom';
 import { useSelector } from 'react-redux'
 import './App.scss';
-import LoginPage from 'components/LoginPage';
-import Dashboard from 'components/Dashboard';
-import Users from 'components/Users';
+import ProtectedRoutes from 'routes/ProtectedRoutes';
+
+const LoginPage = lazy(() => import('features/OnBoarding/LoginPage'));
 
 
 
 function App() {
-  //Getting isAuthenticated store value from Authentication reducer.
-  const { isAuthenticated } = useSelector(state => state.authenticateReducer)
+  //Getting isAuthenticated store value from Authentication slice.
+  const isAuthenticated = useSelector((state) => state.authentication.isAuthenticated)
+
   return (
     <Router>
-      <Switch>
-        <PublicRoute path="/login" isAuthenticated={isAuthenticated}>
-          <LoginPage/>
-        </PublicRoute>
-        <PrivateRoute path="/" isAuthenticated={isAuthenticated}>
-          <ProtectedRoutes/>
-        </PrivateRoute>
-      </Switch>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Switch>
+          <PublicRoute path="/login" isAuthenticated={isAuthenticated}>
+            <LoginPage/>
+          </PublicRoute>
+          <PrivateRoute path="/" isAuthenticated={isAuthenticated}>
+            <ProtectedRoutes/>
+          </PrivateRoute>
+        </Switch>
+      </Suspense>
     </Router>
   );
 }
@@ -69,20 +73,6 @@ function PublicRoute({children, isAuthenticated, ...rest}) {
           ))
       }
     />
-  );
-}
-
-// Here we include the components which need to be accesses after successful login.
-function ProtectedRoutes() {
-  return (
-    <Switch>
-      <Route path="/dashboard">
-        <Dashboard/>
-      </Route>
-      <Route path="/users">
-        <Users/>
-      </Route>
-    </Switch>
   );
 }
 

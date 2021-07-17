@@ -7,13 +7,14 @@ function Dashboard() {
         <img src={logo} className="App-logo" alt="logo"/>
         <p>Create React App Template Preconfigured with</p>
         <ol style={{textAlign: 'left'}}>
-          <li>Redux</li>
+          <li>Redux Toolkit</li>
           <li>React Router</li>
           <li>AntD</li>
           <li>Axios</li>
           <li>Redux Saga</li>
           <li> Basic Authentication / Routes</li>
           <li> SASS</li>
+          <li> Code Splitting</li>
         </ol>
         <a
           className="App-link"

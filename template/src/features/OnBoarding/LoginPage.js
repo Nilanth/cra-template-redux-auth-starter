@@ -1,21 +1,14 @@
 import {useDispatch} from 'react-redux'
-import actions from 'redux/Authenticate/actions';
 import {useSelector} from 'react-redux'
 import {Form, Input, Button, Checkbox} from 'antd';
 import {UserOutlined, LockOutlined} from '@ant-design/icons';
+import { login } from './authenticationSlice'
 
 
 function LoginPage() {
-  const {loader} = useSelector(state => state.authenticateReducer)
+  const loader = useSelector(state => state.authentication.loader)
 
   const dispatch = useDispatch();
-
-  let onFinish = () => {
-    dispatch({
-      type: actions.LOGIN,
-      payload: {'email': 'eve.holt@reqres.in', 'password': 'cityslicka'},
-    });
-  };
 
   return (
     <div className="container">
@@ -25,7 +18,10 @@ function LoginPage() {
         initialValues={{
           remember: true,
         }}
-        onFinish={onFinish}
+        onFinish={() => dispatch(login(
+          {'email': 'eve.holt@reqres.in', 'password': 'cityslicka'},
+        ))
+        }
       >
         <Form.Item
           name="username"

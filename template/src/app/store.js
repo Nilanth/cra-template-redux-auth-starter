@@ -14,7 +14,7 @@ export default function configureAppStore(preloadedState) {
   sagaMiddleware.run(rootSaga)
 
   if (process.env.NODE_ENV !== 'production' && module.hot) {
-    module.hot.accept('redux/rootReducers', () => store.replaceReducer(rootReducer))
+    module.hot.accept('app/rootReducers', () => store.replaceReducer(rootReducer))
   }
   return store
 }

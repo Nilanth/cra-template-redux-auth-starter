@@ -2,7 +2,7 @@
 
 [![Node version](https://img.shields.io/node/v/cra-template-redux-auth-starter.svg?style=flat)](http://nodejs.org/download/)
 
-Redux auth starter is a preconfigured [Create React App (CRA)](https://github.com/facebook/create-react-app) template. You can start building your app with Zero configuration.
+Redux auth starter is a preconfigured [Create React App (CRA)](https://github.com/facebook/create-react-app) template. You can start building your app with Zero configuration. 
 
 ### Usage
 
@@ -40,7 +40,7 @@ Your app is ready to be deployed!
 
 ### This CRA template includes
  - React
- - Redux
+ - Redux Toolkit
  - React Router
  - Axios
  - Redux Saga
@@ -48,6 +48,7 @@ Your app is ready to be deployed!
  - SASS
  - Auth Routes
  - Preconfigured store, actions, sagas 
+ - Code Splitting
 
 ### Advantages
 - Mock authentication is configured with [reqres](https://reqres.in/) API.
@@ -64,6 +65,7 @@ More feature coming on the way...
 
 ### Folder Structure
 ```
+.
 ├── README.md
 ├── jsconfig.json
 ├── package.json
@@ -78,25 +80,28 @@ More feature coming on the way...
 │   ├── App.js
 │   ├── App.scss
 │   ├── App.test.js
-│   ├── Config
+│   ├── app
 │   │   ├── axiosClient.js
-│   │   └── constants.js
-│   ├── components
+│   │   ├── rootReducers.js
+│   │   ├── rootSaga.js
+│   │   └── store.js
+│   ├── common
+│   │   └── utils
+│   │       └── constants.js
+│   ├── features
 │   │   ├── Dashboard.js
-│   │   ├── LoginPage.js
+│   │   ├── OnBoarding
+│   │   │   ├── LoginPage.js
+│   │   │   ├── authenticateAPI.js
+│   │   │   └── authenticationSlice.js
 │   │   └── Users.js
 │   ├── index.css
 │   ├── index.js
 │   ├── logo.svg
-│   ├── redux
-│   │   ├── Authenticate
-│   │   │   ├── actions.js
-│   │   │   ├── reducer.js
-│   │   │   └── saga.js
-│   │   ├── rootReducers.js
-│   │   ├── rootSaga.js
-│   │   └── store.js
 │   ├── reportWebVitals.js
+│   ├── routes
+│   │   ├── ProtectedRoutes.js
+│   │   └── routes.js
 │   └── setupTests.js
 └── yarn.lock
 ```
@@ -110,13 +115,13 @@ After installing the template
 REACT_APP_HOST_URL = https://reqres.in/api/
 ```
 
-2. Write your app components in **components** directory.
+2. Write your app features in **features** directory.
 
 
 3. Write your global scss in **App.scss** file.
 
 
-4. Write your authentication API's in redux/Authenticate/saga.js file.
+4. Write your authentication API's in features/OnBoarding/authenticateAPI.js file.
 
 
 5. Include your component reducer,  saga in rootSaga.js and rootReducers.js to add them to redux middleware.
